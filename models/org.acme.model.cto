@@ -1,0 +1,31 @@
+namespace org.acme.model
+
+asset Record identified by recordId {
+  o String recordId
+  o String GPA
+  o String IELTS
+  o String TOEFL
+  o String GMAT
+  -->Students status
+}
+
+participant Students identified by studentId {
+  o String studentId
+  o String firstName
+  o String lastName
+  o String email
+  o String phoneNum
+  o String passportNum
+}
+
+participant Admin identified by adminId {
+  o String adminId
+  o String name
+  o String email
+  o String phoneNum
+}
+
+transaction Student {
+  --> Record record
+  --> Students newStatus
+}
